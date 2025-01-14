@@ -1,0 +1,49 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container-lg{
+    height: 100vh;
+    display: grid;
+    align-items: center;
+}
+
+.form-label {
+    color: #19456B;
+    font-weight: 500;
+}
+
+.form-control {
+    border: 2px solid #ced4da;
+}
+
+.cantidad-cuotas {
+    display: none;
+}
+
+.formulario__generar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.formulario__enviar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.row .btn {
+    color: #19456B;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: #16C79A; 
+    font-weight: 300;
+    border-width: 2px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin-top: 8px;
+}
+
+.row .btn:hover {
+    color: #F8F1F1;
+    background-color: #16C79A; 
+    border-color: #16C79A; 
+}
