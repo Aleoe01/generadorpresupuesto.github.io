@@ -12,17 +12,17 @@ formaPago.addEventListener('change', function () {
 });
 
 
-document.getElementById('enviar').addEventListener('click', function() {
+document.getElementById('generar').addEventListener('click', function() {
     
     // Obtener los datos del formulario
 
     const nombreVendedor = document.getElementById("nombreVendedor").value;
     const nombreCliente = document.getElementById("nombreCliente").value;
-    const telefono = document.getElementById("telefono").value;
     const producto = document.getElementById("producto").value;
     const precio = document.getElementById("precio").value;
     const formaPago = document.getElementById("formaPago").value;
-    const cantidadCuotas = document.getElementById("cantidadCuotas").value;
+    const cantidadCuotas = document.getElementById("numeroCuotas").value;
+    const texto = document.getElementById("texto");
 
     // Crear el mensaje dependiendo de la forma de pago
 
@@ -50,13 +50,24 @@ document.getElementById('enviar').addEventListener('click', function() {
             " cuotas con tu tarjeta de credito.\nSi te interesa, házmelo saber y te doy todos los detalles. ¡No dudes en consultarme!";
     }
 
-    // Codificar el mensaje para URL
-    const encodedMessage = encodeURIComponent(mensaje);
+    texto.value = mensaje;
 
+    
+} )
+
+document.getElementById('enviar').addEventListener('click', function(){
+
+    const telefono = document.getElementById("telefono").value;
+    const texto = document.getElementById("texto").value;
+    
+    // Codificar el mensaje para URL
+    
+    const encodedMessage = encodeURIComponent(texto);
+    
     // Crear el enlace de WhatsApp
     const whatsappURL = "https://wa.me/549" + telefono + "?text=" + encodedMessage;
-
+    
     // Abrir WhatsApp en una nueva pestaña
     window.open(whatsappURL, "_blank");
 
-} )
+})

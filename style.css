@@ -3,9 +3,10 @@ body {
 }
 
 .container-lg{
-    height: 100vh;
     display: grid;
     align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .form-label {
