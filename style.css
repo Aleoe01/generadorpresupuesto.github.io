@@ -22,9 +22,15 @@ body {
     display: none;
 }
 
-.formulario__generar {
+.container-botones {
     display: flex;
     justify-content: flex-end;
+}
+
+.formulario__generar {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
 }
 
 .formulario__enviar {
@@ -32,19 +38,31 @@ body {
     justify-content: flex-end;
 }
 
-.row .btn {
+.row .boton {
     color: #19456B;
     background-color: rgba(0, 0, 0, 0);
     border-color: #16C79A; 
     font-weight: 300;
+    width: 7.3rem;
     border-width: 2px;
     padding: 10px 30px;
     border-radius: 30px;
     margin-top: 8px;
 }
 
-.row .btn:hover {
+.row .boton:hover {
     color: #F8F1F1;
     background-color: #16C79A; 
     border-color: #16C79A; 
+}
+
+.row .boton-borrar {
+    color: #19456B;
+    background-color: rgba(0, 0, 0, 0);
+    font-weight: 300;
+    width: 7.3rem;
+    border-width: 2px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin-top: 8px;
 }
