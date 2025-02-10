@@ -30,7 +30,7 @@ body {
 .formulario__generar {
     display: flex;
     justify-content: space-between;
-    width: 45%;
+    width: 15.5rem;
 }
 
 .formulario__enviar {
