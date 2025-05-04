@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario de Cliente</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -33,6 +33,16 @@
                     </div>
                 </div>
                 <div class="mb-3">
+                    <label for="formaPago" class="form-label">Forma de pago</label>
+                    <select class="form-select" id="formaPago" aria-label="Default select example">
+                        <option value="" selected>Seleccione forma de pago</option>
+                        <option value="contado">Contado</option>
+                        <option value="tb">Tarjeta bancaria</option>
+                        <option value="credito">OnCity Credito</option>
+                        <option value="preferencial">Cliente preferencial</option>
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="producto" class="form-label">Producto</label>
                     <input type="text" class="form-control" name="producto" id="producto" placeholder="TV TCL 32 FHD Smart"
                         required />
@@ -43,15 +53,6 @@
                         <span class="input-group-text" id="basic-addon1">$</span>
                         <input type="number" class="form-control" name="precio" id="precio" placeholder="$$$" required />
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label for="formaPago" class="form-label">Forma de pago</label>
-                    <select class="form-select" id="formaPago" aria-label="Default select example">
-                        <option value="" selected>Seleccione forma de pago</option>
-                        <option value="contado">Contado</option>
-                        <option value="tb">TB</option>
-                        <option value="credito">OnCity Credito</option>
-                    </select>
                 </div>
                 <div class="mb-3 cantidad-cuotas" id="cantidadCuotas">
                     <label for="numeroCuotas" class="form-label">Cantidad de cuotas</label>
