@@ -42,12 +42,26 @@
                         <option value="preferencial">Cliente preferencial</option>
                     </select>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" id="inputProducto">
                     <label for="producto" class="form-label">Producto</label>
                     <input type="text" class="form-control" name="producto" id="producto" placeholder="TV TCL 32 FHD Smart"
                         required />
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 input-credito" id="inputCredito">
+                    <label for="credito" class="form-label">Limite credito</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">$</span>
+                        <input type="text" class="form-control" name="limiteCredito" id="limiteCredito" placeholder="$$$" required />
+                    </div>
+                </div>
+                <div class="mb-3 input-prestamo" id="inputPrestamo">
+                    <label for="prestamo" class="form-label">Limite prestamo</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">$</span>
+                        <input type="text" class="form-control" name="limitePrestamo" id="limitePrestamo" placeholder="$$$" required />
+                    </div>
+                </div>
+                <div class="mb-3" id="inputPrecio">
                     <label for="precio" class="form-label">Precio</label>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">$</span>

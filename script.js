@@ -2,22 +2,30 @@
 // Mostrar u ocultar las cuotas dependiendo de la forma de pago
 document.getElementById("formaPago").addEventListener("change", function () {
   const formaPago = this.value;
-  const producto = document.getElementById("producto");
-  const precio = document.getElementById("precio");
+  const inputProducto = document.getElementById("inputProducto");
+  const inputPrecio = document.getElementById("inputPrecio");
   const cantidadCuotas = document.getElementById("cantidadCuotas");
+  const limiteCredito = document.getElementById("inputCredito");
+  const limitePrestamo = document.getElementById("inputPrestamo");
   
   if (formaPago === "tb") {
     cantidadCuotas.style.display = "block";
-    producto.disabled = false;
-    precio.disabled = false;
+    inputProducto.style.display = "block";
+    inputPrecio.style.display = "block";
+    limiteCredito.style.display = "none";
+    limitePrestamo.style.display = "none";
   } else if (formaPago === "preferencial") {
     cantidadCuotas.style.display = "none";
-    producto.disabled = true;
-    precio.disabled = true;
+    inputProducto.style.display = "none";
+    inputPrecio.style.display = "none";
+    limiteCredito.style.display = "block";
+    limitePrestamo.style.display = "block";
   } else {
     cantidadCuotas.style.display = "none";
-    producto.disabled = false;
-    precio.disabled = false;
+    inputProducto.style.display = "block";
+    inputPrecio.style.display = "block";
+    limiteCredito.style.display = "none";
+    limitePrestamo.style.display = "none";
   }
 
 });
@@ -38,7 +46,8 @@ document.getElementById("generar").addEventListener("click", function () {
   const formaPago = document.getElementById("formaPago").value;
   const numeroCuotas = document.getElementById("numeroCuotas").value;
   const texto = document.getElementById("texto");
-  const enlaceCatalogo = "https://v3ar.zone-secure.net/3304/2420778/#page=1";
+  const limiteCredito = document.getElementById("limiteCredito").value;
+  const limitePrestamo = document.getElementById("limitePrestamo").value;
 
   //campos obligatorios comunes
   if (!nombreVendedor || !nombreCliente) {
@@ -85,7 +94,11 @@ document.getElementById("generar").addEventListener("click", function () {
 
     default: // cliente preferencial
 
-      mensaje =  `¡Hola ${nombreCliente}, soy ${nombreVendedor} de On City Esperanza! 😃\n\nQuería compartirte nuestro nuevo *catálogo digital* 📲 con productos pensados especialmente para vos, que sos parte de nuestros clientes preferenciales 💙\n\n📌 Miralo acá: ${enlaceCatalogo}\n\nSi te gusta algo o tenés dudas, escribime sin problema. ¡Tenés prioridad en stock y promos especiales solo para vos! 😉\n\n¡Gracias por seguir confiando en nosotros! 🙌`;
+      if (!limiteCredito || !limitePrestamo) {
+        alert("Por favor, completá los montos de crédito y préstamo.");
+        return;
+      }
+      mensaje =  `¡Hola ${nombreCliente}, soy Ale de On City Esperanza! 😊\n\nQuería contarte que como cliente preferencial, tenés acceso exclusivo a *financiaciones especiales* 💙\n\nPodés acceder hasta $${limiteCredito} con Crédito On City o consultar por *préstamos personales* de hasta $${limitePrestamo} con mínimos requisitos.\n\nAdemás, te comparto nuestro catálogo digital actualizado con productos pensados especialmente para vos, ¡valido hasta el *15 de mayo*! 📲\n\nSi te interesa algo o querés más info, escribime. ¡Estoy para ayudarte! 🙌`;
 
       break;
   }
@@ -109,6 +122,8 @@ document.getElementById("borrar").addEventListener("click", function () {
     document.getElementById("numeroCuotas").value = "";
     cantidadCuotas.style.display = "none";
     document.getElementById("texto").value = "";
+    document.getElementById("limiteCredito").value = "";
+    document.getElementById("limitePrestamo").value = "";
     
 })
 

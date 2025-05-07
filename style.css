@@ -22,6 +22,14 @@ body {
     display: none;
 }
 
+.input-credito {
+    display: none;
+}
+
+.input-prestamo {
+    display: none;
+}
+
 .container-botones {
     display: flex;
     justify-content: flex-end;
