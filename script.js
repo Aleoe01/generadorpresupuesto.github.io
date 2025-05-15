@@ -35,6 +35,34 @@ function CapitalizarNombre(nombre){
   return nombre.charAt(0).toUpperCase() + nombre.slice(1);
 }
 
+// Funciones generadoras de mensajes
+
+function generarMensajeContado(nombreCliente, nombreVendedor, producto, precio) {
+  return `¡Hola ${nombreCliente}, soy ${nombreVendedor} de On City Esperanza! 😊\n\n
+          Sé que estuviste interesado/a en el *${producto}* y tengo un precio contado especial de *$${precio}* disponible por tiempo limitado. 💸\n\n
+          ¡No dejes pasar esta oportunidad!`;
+}
+
+function generarMensajeTarjeta(nombreCliente, nombreVendedor, producto, precio, cuotas) {
+  return `Hola ${nombreCliente}, soy ${nombreVendedor} de On City Esperanza! 😄\n\n` +
+         `Por el *${producto}*, el precio es $${precio} y podés pagarlo en ${cuotas} cuotas con tarjeta. 💳\n\n` +
+         `¡Consultame sin compromiso!`;
+}
+
+function generarMensajeCredito(nombreCliente, nombreVendedor, producto, precio) {
+  return `Hola ${nombreCliente}, soy ${nombreVendedor} de On City Esperanza! 😄\n\n` +
+         `Podés llevar el *${producto}* con Crédito On City en hasta 24 cuotas. Precio: $${precio}.`;
+}
+
+function generarMensajePreferencial(nombreCliente, nombreVendedor, limiteCredito, limitePrestamo) {
+  return `¡Hola ${nombreCliente}, soy ${nombreVendedor} de On City Esperanza! 😊\n\n` +
+          `Quería contarte que, por ser *cliente preferencial*, tenés acceso exclusivo a *financiaciones especiales* 💙\n\n` +
+          `👉 Limite disponible de $${limiteCredito} con *Crédito On City* para lo que más te guste\n` +
+          `👉 LLevate hasta $${limitePrestamo} en efectivo con *préstamos personales*\n\n` +
+          `Son montos pensados para vos, con cuotas se ajustan a tus necesidades para que puedas aprovechar al máximo este beneficio. 🚀\n\n` +
+          `Si te interesa, escribime o pasate por la sucursal y te explico cómo avanzar. ¡Estoy para ayudarte! 🙌`;
+}
+
 // Generar el mensaje personalizado
 document.getElementById("generar").addEventListener("click", function () {
   
@@ -64,8 +92,7 @@ document.getElementById("generar").addEventListener("click", function () {
         alert("Por favor, completá los campos de producto y precio.");
         return;
       }
-      mensaje = `¡Hola ${nombreCliente}, soy ${nombreVendedor} de On City Esperanza! 😊\n\nSé que estuviste interesado/a en el *${producto}* y tengo un precio contado especial de *$${precio}* disponible por tiempo limitado. 💸\n\n¡No dejes pasar esta oportunidad!`;
-
+      mensaje = generarMensajeContado(nombreCliente, nombreVendedor, producto, precio);
       break;
 
     case "tb":
@@ -78,8 +105,7 @@ document.getElementById("generar").addEventListener("click", function () {
         alert("Por favor, ingresá la cantidad de cuotas.");
         return;
       }
-      mensaje = `¡Hola ${nombreCliente}, soy ${nombreVendedor} de On City Esperanza! 😊\n\nSé que estuviste interesado/a en el *${producto}*. El precio es de *$${precio}* y podemos ofrecerte el pago en *${numeroCuotas} cuotas* con tu tarjeta de crédito. 💳\n\n¡No dudes en consultarme!`;
-
+      mensaje = generarMensajeTarjeta(nombreCliente,nombreVendedor,producto,precio,numeroCuotas);
       break;
 
     case "credito":
@@ -88,8 +114,7 @@ document.getElementById("generar").addEventListener("click", function () {
         alert("Por favor, completá los campos de producto y precio.");
         return;
       }
-      mensaje = `¡Hola ${nombreCliente}, soy ${nombreVendedor} de On City Esperanza! 😊\n\nSé que estuviste interesado/a en el *${producto}*. El precio es de *$${precio}* y podés financiarlo en hasta *24 cuotas* con *crédito On City*. 🧾\n\n¡Estoy para ayudarte!`;
-
+      mensaje = generarMensajeCredito(nombreCliente,nombreVendedor,producto,precio);
       break;
 
     default: // cliente preferencial
@@ -98,7 +123,7 @@ document.getElementById("generar").addEventListener("click", function () {
         alert("Por favor, completá los montos de crédito y préstamo.");
         return;
       }
-      mensaje =  `¡Hola ${nombreCliente}, soy Ale de On City Esperanza! 😊\n\nQuería contarte que como cliente preferencial, tenés acceso exclusivo a *financiaciones especiales* 💙\n\nPodés acceder hasta $${limiteCredito} con Crédito On City o consultar por *préstamos personales* de hasta $${limitePrestamo} con mínimos requisitos.\n\nAdemás, te comparto nuestro catálogo digital actualizado con productos pensados especialmente para vos, ¡valido hasta el *15 de mayo*! 📲\n\nSi te interesa algo o querés más info, escribime. ¡Estoy para ayudarte! 🙌`;
+      mensaje = generarMensajePreferencial(nombreCliente, nombreVendedor, limiteCredito, limitePrestamo);
 
       break;
   }
