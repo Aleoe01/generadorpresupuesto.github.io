@@ -1,4 +1,3 @@
-
 // Mostrar u ocultar las cuotas dependiendo de la forma de pago
 document.getElementById("formaPago").addEventListener("change", function () {
   const formaPago = this.value;
@@ -59,7 +58,7 @@ function generarMensajePreferencial(nombreCliente, nombreVendedor, limiteCredito
           `Quería contarte que, por ser *cliente preferencial*, tenés acceso exclusivo a *financiaciones especiales* 💙\n\n` +
           `👉 Limite disponible de $${limiteCredito} con *Crédito On City* para lo que más te guste\n` +
           `👉 LLevate hasta $${limitePrestamo} en efectivo con *préstamos personales*\n\n` +
-          `Son montos pensados para vos, con cuotas se ajustan a tus necesidades para que puedas aprovechar al máximo este beneficio. 🚀\n\n` +
+          `Son montos pensados para vos, con cuotas que se ajustan a tus necesidades para que puedas aprovechar al máximo este beneficio. 🚀\n\n` +
           `Si te interesa, escribime o pasate por la sucursal y te explico cómo avanzar. ¡Estoy para ayudarte! 🙌`;
 }
 
