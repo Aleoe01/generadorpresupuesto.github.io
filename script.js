@@ -57,7 +57,8 @@ function generarMensajePreferencial(nombreCliente, nombreVendedor, limiteCredito
   return `¡Hola ${nombreCliente}, soy ${nombreVendedor} de On City Esperanza! 😊\n\n` +
           `Quería contarte que, por ser *cliente preferencial*, tenés acceso exclusivo a *financiaciones especiales* 💙\n\n` +
           `👉 Limite disponible de $${limiteCredito} con *Crédito On City* para lo que más te guste\n` +
-          `👉 LLevate hasta $${limitePrestamo} en efectivo con *préstamos personales*\n\n` +
+          `👉 Llevate hasta $${limitePrestamo} en efectivo con *préstamos personales*\n\n` +
+          `👉 Te lo llevas hoy y la primer cuota la pagas recien en *Julio*\n\n` +
           `Son montos pensados para vos, con cuotas que se ajustan a tus necesidades para que puedas aprovechar al máximo este beneficio. 🚀\n\n` +
           `Si te interesa, escribime o pasate por la sucursal y te explico cómo avanzar. ¡Estoy para ayudarte! 🙌`;
 }
